@@ -1,0 +1,5 @@
+FistBump example:
+
+```js
+<FistBump />
+```

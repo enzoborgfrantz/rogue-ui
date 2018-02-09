@@ -25,6 +25,10 @@ const baseConfig = {
         use: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+        use: 'file-loader?name=[name].[ext]',
+      },
     ],
   },
   resolve: {

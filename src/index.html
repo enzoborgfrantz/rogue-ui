@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Michroma|Montserrat:300,400" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React Boiler</title>
+    <title>rogue-ui</title>
     <script>
-    (function() {
-  var shouldPolyfill = !window.fetch || !window.Promise;
-  if (shouldPolyfill) {
-    var polyfillScript = document.createElement('script');
-    polyfillScript.async = false;
-    polyfillScript.src = './polyfills.js';
-    document.head.appendChild(polyfillScript);
-  }
-})();
-</script>
+      (function () {
+        var shouldPolyfill = !window.fetch || !window.Promise;
+        if (shouldPolyfill) {
+          var polyfillScript = document.createElement('script');
+          polyfillScript.async = false;
+          polyfillScript.src = './polyfills.js';
+          document.head.appendChild(polyfillScript);
+        }
+      })();
+    </script>
   </head>
-  <body>
+  <body style="background: linear-gradient(0deg, #CF4647,#2A363B); height: 100vh; padding: 0; box-sizing: border-box; overflow: hidden;">
     <div id="root"></div>
   </body>
 </html>
