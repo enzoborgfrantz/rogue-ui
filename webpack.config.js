@@ -11,11 +11,9 @@ const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
 
 const baseConfig = {
   entry: {
-    polyfills: './src/polyfills.js',
     index: './src/index.js',
   },
   output: {
-    path: path.resolve('dist'),
     filename: '[name].js',
   },
   module: {
@@ -43,7 +41,6 @@ const baseConfig = {
       template: './src/index.html',
       filename: 'index.html',
       inject: 'body',
-      excludeChunks: ['polyfills'],
     }),
   ],
 };
