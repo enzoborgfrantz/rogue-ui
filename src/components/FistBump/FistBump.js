@@ -5,18 +5,21 @@ import { inflate } from '../../styles/animations';
 import { FadeIn } from '../../containers/Fade';
 
 const FistBumpWrapper = styled.div`
+  user-select: none;
   position: relative;
   height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  -webkit-tap-highlight-color: transparent;
   &:hover {
     cursor: pointer;
   }
 `;
 
 const FistBumpStyle = styled.div`
+  user-select: none;
   text-align: center;
   font-size: 120px;
   transform: scale(0.4);
@@ -31,6 +34,7 @@ const FistBumpStyle = styled.div`
 `;
 
 const ScreenCrack = styled.div`
+  user-select: none;
   position: absolute;
   top: 50%;
   left: 50%;

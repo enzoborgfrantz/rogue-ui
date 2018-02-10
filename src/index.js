@@ -11,7 +11,7 @@ require('../favicon.ico');
 
 const Page = styled.div`
   width: 80vw;
-  margin: 20vh auto 0;
+  margin: 15vh auto 0;
 `;
 
 const Title = styled.h1`
@@ -52,6 +52,7 @@ const IconStyle = styled(FontAwesome)`
   font-size: ${({ fontSize = 30 }) => fontSize}px;
   transition: transform 0.2s ease-in;
   &:hover {
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     transform: scale(1.1);
   }
@@ -72,6 +73,7 @@ const Link = styled.a`
 `;
 
 const TypeWritersWrapper = styled.div`
+  height: 30px;
   padding: 5px;
   box-sizing: border-box;
   width: 320px;
@@ -79,6 +81,7 @@ const TypeWritersWrapper = styled.div`
   opacity: 0.8;
   transition: opacity 0.2s ease-in;
   &:hover {
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     opacity: 1;
   }
@@ -92,13 +95,15 @@ ReactDOM.render(
       <br />
       <FistBump />
       <br />
+      <br />
+      <br />
       <IsActive
         component={({ isActive, activate, deactivate }) => (
           <TypeWritersWrapper onMouseOver={activate} onMouseLeave={deactivate}>
             <TypeWriter text="npm install rogue-ui --save" />
             <FadeInAndOut animationDuration={0.3} isVisible={isActive}>
               <Icon
-                fontSize={16}
+                fontSize={15}
                 name=" fas fa-copy"
                 style={{ marginLeft: '5px' }}
               />
@@ -113,7 +118,7 @@ ReactDOM.render(
             <TypeWriter text="yarn add rogue-ui" />
             <FadeInAndOut animationDuration={0.3} isVisible={isActive}>
               <Icon
-                fontSize={16}
+                fontSize={15}
                 name=" fas fa-copy"
                 style={{ marginLeft: '5px' }}
               />

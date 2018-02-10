@@ -27,7 +27,7 @@ class DelayUnmounting extends Component {
   }
 }
 
-DelayUnmounting.PropTypes = {
+DelayUnmounting.propTypes = {
   isVisible: bool.isRequired,
   animationDuration: number.isRequired,
   component: func.isRequired,
