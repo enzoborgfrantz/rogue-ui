@@ -14,6 +14,7 @@ const baseConfig = {
     index: './src/index.js',
   },
   output: {
+    path: path.resolve('docs'),
     filename: '[name].js',
   },
   module: {
@@ -68,7 +69,12 @@ const prodConfig = {
     hints: 'error',
   },
   plugins: [
-    ...baseConfig.plugins,
+    new CleanWebpackPlugin('docs'),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+      inject: 'body',
+    }),
     new DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
