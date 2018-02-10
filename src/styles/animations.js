@@ -1,6 +1,7 @@
 import { keyframes } from 'styled-components';
+import { white } from './colors';
 
-export const Inflate = keyframes`
+export const inflate = keyframes`
   from {
     transform: scale(0.4);
   }
@@ -9,17 +10,50 @@ export const Inflate = keyframes`
   }
 `;
 
-export const Pulse = keyframes`
+export const pulse = keyframes`
   from {
-    ${'' /* transform: scale(0.4); */}
     opacity: 0.75;
   }
   50% {
-    ${'' /* transform: scale(0.5); */}
     opacity: 1;
   }
   to {
-    ${'' /* transform: scale(0.4); */}
     opacity: 0.75;
+  }
+`;
+
+export const grow = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+export const blink = keyframes`
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: ${white};
+  }
+`;
+
+export const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 `;

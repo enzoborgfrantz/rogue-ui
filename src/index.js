@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import FistBump from './components/FistBump';
-import { white } from './styles/colors';
 import FontAwesome from 'react-fontawesome';
+import FistBump from './components/FistBump';
+import TypeWriter from './components/TypeWriter';
+import IsActive from './containers/IsActive';
+import { FadeInAndOut } from './containers/Fade';
+import { white } from './styles/colors';
 require('../favicon.ico');
 
 const Page = styled.div`
@@ -32,13 +35,52 @@ const TitleWrapper = styled.div`
   align-items: center;
 `;
 
-const GithubIcon = styled(FontAwesome)`
+const IconGrid = styled.div`
   position: absolute;
   bottom: 25px;
+  display: flex;
+  align-items: center;
+  > * {
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+`;
+
+const IconStyle = styled(FontAwesome)`
   color: ${white};
-  font-size: 30px;
+  font-size: ${({ fontSize = 30 }) => fontSize}px;
+  transition: transform 0.2s ease-in;
   &:hover {
     cursor: pointer;
+    transform: scale(1.1);
+  }
+`;
+
+const Icon = ({ ...props }) => (
+  <span>
+    <IconStyle {...props} />
+  </span>
+);
+
+const Link = styled.a`
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in;
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+const TypeWritersWrapper = styled.div`
+  padding: 5px;
+  box-sizing: border-box;
+  width: 320px;
+  display: flex;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
   }
 `;
 
@@ -47,8 +89,46 @@ ReactDOM.render(
     <TitleWrapper>
       <Title>rogue-ui</Title>
       <Subtitle>W.i.P</Subtitle>
+      <br />
       <FistBump />
-      <GithubIcon name="github" />
+      <br />
+      <IsActive
+        component={({ isActive, activate, deactivate }) => (
+          <TypeWritersWrapper onMouseOver={activate} onMouseLeave={deactivate}>
+            <TypeWriter text="npm install rogue-ui --save" />
+            <FadeInAndOut animationDuration={0.3} isVisible={isActive}>
+              <Icon
+                fontSize={16}
+                name=" fas fa-copy"
+                style={{ marginLeft: '5px' }}
+              />
+            </FadeInAndOut>
+          </TypeWritersWrapper>
+        )}
+      />
+      <br />
+      <IsActive
+        component={({ isActive, activate, deactivate }) => (
+          <TypeWritersWrapper onMouseOver={activate} onMouseLeave={deactivate}>
+            <TypeWriter text="yarn add rogue-ui" />
+            <FadeInAndOut animationDuration={0.3} isVisible={isActive}>
+              <Icon
+                fontSize={16}
+                name=" fas fa-copy"
+                style={{ marginLeft: '5px' }}
+              />
+            </FadeInAndOut>
+          </TypeWritersWrapper>
+        )}
+      />
+      <IconGrid>
+        <Link href="https://github.com/enzoborgfrantz/rogue-ui" target="_blank">
+          <Icon fontSize={20} name="github" />
+        </Link>
+        <Link href="https://www.npmjs.com/package/rogue-ui" target="_blank">
+          <Icon fontSize={40} name=" fab fa-npm" />
+        </Link>
+      </IconGrid>
     </TitleWrapper>
   </Page>,
   document.getElementById('root')

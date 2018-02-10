@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Inflatable from '../../containers/Inflatable';
-import { Inflate, Pulse } from '../../styles/animations';
+import { inflate } from '../../styles/animations';
+import { FadeIn } from '../../containers/Fade';
 
 const FistBumpWrapper = styled.div`
   position: relative;
@@ -19,12 +20,11 @@ const FistBumpStyle = styled.div`
   text-align: center;
   font-size: 120px;
   transform: scale(0.4);
-  animation: ${Pulse} 3s infinite;
-  animation-timing-function: ease;
+  z-index: -1;
   ${({ inflating, animationDuration }) =>
     inflating &&
     `
-    animation: ${Inflate} ${animationDuration}s 1;
+    animation: ${inflate} ${animationDuration}s 1;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   `};
@@ -42,9 +42,6 @@ const ScreenCrack = styled.div`
   background: url(http://www.pngmart.com/files/1/Broken-Glass-PNG-File-348x279.png);
   pointer-events: none;
   background-repeat: round;
-  z-index: 100;
-  ${({ show }) => `opacity: ${Number(show)}`};
-  transition: all 0.1s linear;
   transform: rotate(180deg);
 `;
 
@@ -55,7 +52,9 @@ const FistBump = ({ inflationDurationInMS, onFullyInflated }) => (
         onMouseDown={inflate}
         onMouseUp={() => !max && deflate()}
       >
-        <ScreenCrack show={max} />
+        <FadeIn isVisible={max} animationDuration={0.1}>
+          <ScreenCrack />
+        </FadeIn>
         <FistBumpStyle
           inflating={inflating}
           animationDuration={animationDuration}
