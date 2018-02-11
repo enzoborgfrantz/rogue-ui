@@ -124,7 +124,6 @@ ReactDOM.render(
           </TypeWritersWrapper>
         )}
       />
-      <br />
       <IconGrid>
         <Link href="https://github.com/enzoborgfrantz/rogue-ui" target="_blank">
           <Icon fontSize={20} name="github" />
