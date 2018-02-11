@@ -95,8 +95,6 @@ ReactDOM.render(
       <Subtitle>W.i.P</Subtitle>
       <FistBump />
       <br />
-      <br />
-      <br />
       <IsActive
         component={({ isActive, activate, deactivate }) => (
           <TypeWritersWrapper onMouseOver={activate} onMouseLeave={deactivate}>
@@ -126,6 +124,7 @@ ReactDOM.render(
           </TypeWritersWrapper>
         )}
       />
+      <br />
       <IconGrid>
         <Link href="https://github.com/enzoborgfrantz/rogue-ui" target="_blank">
           <Icon fontSize={20} name="github" />
