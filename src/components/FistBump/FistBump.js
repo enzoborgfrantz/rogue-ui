@@ -7,7 +7,7 @@ import { FadeIn } from '../../containers/Fade';
 const FistBumpWrapper = styled.div`
   user-select: none;
   position: relative;
-  height: 100px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,10 @@ const FistBumpWrapper = styled.div`
 const FistBumpStyle = styled.div`
   user-select: none;
   text-align: center;
-  font-size: 120px;
+  background: url(https://i.imgur.com/KwJVsF5.png);
+  width: 120px;
+  height: 120px;
+  background-size: contain;
   transform: scale(0.4);
   z-index: -1;
   ${({ inflating, animationDuration }) =>
@@ -63,7 +66,7 @@ const FistBump = ({ inflationDurationInMS, onFullyInflated }) => (
           inflating={inflating}
           animationDuration={animationDuration}
         >
-          👊🏻
+          {/* 👊🏻 */}
         </FistBumpStyle>
       </FistBumpWrapper>
     )}

@@ -5,6 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CNAMEWebpackPlugin = require('cname-webpack-plugin');
 
 const DefinePlugin = webpack.DefinePlugin;
 const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
@@ -74,6 +75,9 @@ const prodConfig = {
       template: './src/index.html',
       filename: 'index.html',
       inject: 'body',
+    }),
+    new CNAMEWebpackPlugin({
+      domain: 'rogue-ui.com',
     }),
     new DefinePlugin({
       'process.env': {

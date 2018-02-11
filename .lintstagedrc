@@ -1,9 +1,9 @@
 {
+  "ignore": [
+    "./docs/**"
+  ],
   "*.js": [
     "prettier --write",
     "git add"
-  ],
-  "ignore": [
-    "docs/**"
   ]
 }

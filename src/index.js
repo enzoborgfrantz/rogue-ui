@@ -26,6 +26,7 @@ const Subtitle = styled.h2`
   font-size: 16px;
   font-weight: 300;
   color: ${white};
+  margin-bottom: 0;
 `;
 
 const TitleWrapper = styled.div`
@@ -92,7 +93,6 @@ ReactDOM.render(
     <TitleWrapper>
       <Title>rogue-ui</Title>
       <Subtitle>W.i.P</Subtitle>
-      <br />
       <FistBump />
       <br />
       <br />
