@@ -46,7 +46,7 @@ const ScreenCrack = styled.div`
   margin: -85px -75px;
   background-position: center;
   background-size: contain;
-  background: url(http://www.pngmart.com/files/1/Broken-Glass-PNG-File-348x279.png);
+  background: url(https://i.imgur.com/HunRuaV.png);
   pointer-events: none;
   background-repeat: round;
   transform: rotate(180deg);
