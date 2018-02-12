@@ -140,7 +140,7 @@ ReactDOM.render(
       <br />
       <br />
       <br />
-      <LinkButton href="./styleguide/index.html">
+      <LinkButton href="./styleguide/index.html" target="_blank">
         <Subtitle style={{ margin: 0 }}>Components</Subtitle>
       </LinkButton>
       <IconGrid>

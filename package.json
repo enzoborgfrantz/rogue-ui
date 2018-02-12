@@ -4,7 +4,6 @@
   "description": "React component library",
   "main": "dist/index.js",
   "scripts": {
-    "precommit": "lint-staged --config .lintstagedrc",
     "start": "NODE_ENV=development webpack-dev-server --env=dev",
     "build": "NODE_ENV=production webpack --env=prod",
     "analyze": "NODE_ENV=production webpack --env=analyze",
@@ -19,12 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/enzoborgfrantz/react-boiler.git"
   },
-  "keywords": [
-    "react",
-    "jest",
-    "boiler",
-    "style-components"
-  ],
+  "keywords": ["react", "jest", "boiler", "style-components"],
   "author": "enzo borg frantz",
   "license": "ISC",
   "bugs": {
