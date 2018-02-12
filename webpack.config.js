@@ -15,7 +15,7 @@ const baseConfig = {
     index: './src/index.js',
   },
   output: {
-    path: path.resolve('docs'),
+    path: path.resolve('dist'),
     filename: '[name].js',
   },
   module: {
@@ -66,6 +66,10 @@ const devConfig = {
 
 const prodConfig = {
   ...baseConfig,
+  output: {
+    path: path.resolve('docs'),
+    filename: '[name].js',
+  },
   performance: {
     hints: 'error',
   },
