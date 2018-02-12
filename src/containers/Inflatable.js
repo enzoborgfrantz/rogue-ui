@@ -15,19 +15,23 @@ class Inflatable extends Component {
 
   inflate = () => {
     const { inflationDurationInMS, onFullyInflated } = this.props;
+    const { inflating } = this.state;
 
-    this.setState({ inflating: true });
-    setTimeout(() => {
-      const { inflating } = this.state;
-      if (inflating) {
-        this.setState({ max: true });
-        onFullyInflated && onFullyInflated();
-      }
-    }, inflationDurationInMS);
+    if (!inflating) {
+      this.setState({ inflating: true });
+      this.animationTimeout = setTimeout(() => {
+        const { inflating } = this.state;
+        if (inflating) {
+          onFullyInflated && onFullyInflated();
+          this.setState({ max: true });
+        }
+      }, inflationDurationInMS);
+    }
   };
 
   deflate = () => {
     this.setState({ inflating: false, max: false });
+    clearTimeout(this.animationTimeout);
   };
 
   render() {

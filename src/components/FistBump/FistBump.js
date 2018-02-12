@@ -26,7 +26,6 @@ const FistBumpStyle = styled.div`
   height: 120px;
   background-size: contain;
   transform: scale(0.4);
-  z-index: -1;
   ${({ inflating, animationDuration }) =>
     inflating &&
     `
@@ -59,15 +58,13 @@ const FistBump = ({ inflationDurationInMS, onFullyInflated }) => (
         onMouseDown={inflate}
         onMouseUp={() => !max && deflate()}
       >
-        <FadeIn isVisible={max} animationDuration={0.1}>
-          <ScreenCrack />
-        </FadeIn>
         <FistBumpStyle
           inflating={inflating}
           animationDuration={animationDuration}
-        >
-          {/* 👊🏻 */}
-        </FistBumpStyle>
+        />
+        <FadeIn isVisible={max} animationDuration={0.1}>
+          <ScreenCrack />
+        </FadeIn>
       </FistBumpWrapper>
     )}
   />

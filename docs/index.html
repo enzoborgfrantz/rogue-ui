@@ -15,21 +15,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rogue-ui</title>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAfW6VC079obUCC5jWcpBN4Zx_D9V9MFb0",
+        authDomain: "rogue-ui.firebaseapp.com",
+        databaseURL: "https://rogue-ui.firebaseio.com",
+        projectId: "rogue-ui",
+        storageBucket: "",
+        messagingSenderId: "733237688781"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/v4-shims.js"></script>
-    <script>
-      (function () {
-        var shouldPolyfill = !window.fetch || !window.Promise;
-        if (shouldPolyfill) {
-          var polyfillScript = document.createElement('script');
-          polyfillScript.async = false;
-          polyfillScript.src = './polyfills.js';
-          document.head.appendChild(polyfillScript);
-        }
-      })();
-    </script>
   </head>
-  <body style="background: linear-gradient(0deg, #CF4647,#2A363B); height: 100vh; padding: 0; box-sizing: border-box; overflow: hidden;">
+  <body style="padding: 0; margin: 0; background-color: #F8F6F6;">
     <div id="root"></div>
   <script type="text/javascript" src="index.js"></script></body>
 </html>

@@ -6,12 +6,16 @@ import FistBump from './components/FistBump';
 import TypeWriter from './components/TypeWriter';
 import IsActive from './containers/IsActive';
 import { FadeInAndOut } from './containers/Fade';
-import { white } from './styles/colors';
+import { red, white, gray } from './styles/colors';
+
 require('../favicon.ico');
 
 const Page = styled.div`
-  width: 80vw;
-  margin: 15vh auto 0;
+  padding: 15vh 10vw 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, ${red}, ${gray});
 `;
 
 const Title = styled.h1`
@@ -73,6 +77,15 @@ const Link = styled.a`
   }
 `;
 
+const LinkButton = styled(Link)`
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid ${white};
+  border-radius: 3px;
+  padding: 5px;
+  font-family: 'Michroma', sans-serif;
+`;
+
 const TypeWritersWrapper = styled.div`
   height: 30px;
   padding: 5px;
@@ -124,6 +137,12 @@ ReactDOM.render(
           </TypeWritersWrapper>
         )}
       />
+      <br />
+      <br />
+      <br />
+      <LinkButton href="./styleguide/index.html">
+        <Subtitle style={{ margin: 0 }}>Components</Subtitle>
+      </LinkButton>
       <IconGrid>
         <Link href="https://github.com/enzoborgfrantz/rogue-ui" target="_blank">
           <Icon fontSize={20} name="github" />

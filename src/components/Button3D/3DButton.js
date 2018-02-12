@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { red } from '../../styles/colors';
 
-const ButtonStyle = styled.button`
+const Button3DStyle = styled.button`
   appearance: none;
-  background-color: #cf4647;
+  background-color: ${red};
   border: none;
   border-radius: 4px;
   box-shadow: inset -3px -4px 0 rgba(27, 31, 35, 0.12);
@@ -25,6 +26,6 @@ const ButtonStyle = styled.button`
   }
 `;
 
-const Button = () => <ButtonStyle>Click me</ButtonStyle>;
+const Button3D = ({ children }) => <Button3DStyle>{children}</Button3DStyle>;
 
-export default Button;
+export default Button3D;

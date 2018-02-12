@@ -68,6 +68,7 @@
     "file-loader": "^1.1.6",
     "promise-polyfill": "6.0.2",
     "prop-types": "^15.6.0",
+    "push.js": "^1.0.5",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-fontawesome": "^1.6.1",
